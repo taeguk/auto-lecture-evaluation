@@ -1,8 +1,8 @@
-{
+ï»¿{
   "manifest_version": 2,
-  "name": "¼­°­´ëÇĞ±³ Saint °­ÀÇÆò°¡ auto",
+  "name": "ì„œê°•ëŒ€í•™êµ Saint ê°•ì˜í‰ê°€ auto",
   "version": "0.1",
-  "description": "¼­°­´ëÇĞ±³ ¼¼ÀÎÆ® °­ÀÇÆò°¡¸¦ ÀÚµ¿À¸·Î ÇØÁÖ´Â È®Àå ÇÁ·Î±×·¥ÀÔ´Ï´Ù.",
+  "description": "ì„œê°•ëŒ€í•™êµ ì„¸ì¸íŠ¸ ê°•ì˜í‰ê°€ë¥¼ ìë™ìœ¼ë¡œ í•´ì£¼ëŠ” í™•ì¥ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.",
   "browser_action": {
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
