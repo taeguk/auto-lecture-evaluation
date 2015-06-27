@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Auto Lecture Evaluation for Sogang Univ.",
+  "name": "서강대학교 Saint 강의평가 auto",
   "version": "0.1",
-  "description": "Auto Lecture Evaluation for Sogang Univ.",
+  "description": "서강대학교 세인트 강의평가를 자동으로 해주는 확장 프로그램입니다.",
   "browser_action": {
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
