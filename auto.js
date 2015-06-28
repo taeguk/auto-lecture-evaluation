@@ -16,7 +16,7 @@
 			var is_finish = true;
 			var idx;
 			var check_box_first = true;
-			for (var i = 4; i < ts.length;) {
+			for (var i = 0; i < ts.length;) {
 				var el = ts[i].getElementsByTagName('input')[0];
 				if(el.value == '30000019') {
 					i += 2;
@@ -31,9 +31,9 @@
 					}
 					i = j;
 					check_box_first = false;
-				} else if(i > 4){
-					var j = i + Math.floor(Math.random() * 3);
+				} else {
 					var n = parseInt(el.value);
+					var j = i + Math.floor(Math.random() * (n>3?3:n));
 					if(n == NaN || n < 0 || n > 5) {
 						j = i;
 						n = 0;
