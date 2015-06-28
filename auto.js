@@ -19,7 +19,15 @@
 			for (var i = 0; i < ts.length;) {
 				var el = ts[i].getElementsByTagName('input')[0];
 				if(el.value == '30000019') {
-					i += 2;
+					var j = i + 2;
+					for(var k = i; k < i+4; ++k) {
+						var el = ts[k].getElementsByTagName('input')[0];
+						if(el.checked) {
+							j = k;
+							break;
+						}
+					}
+					i = j;
 				} else if(el.type == 'checkbox' && check_box_first) {
 					var j = i + Math.floor(Math.random() * 3);
 					for(var k = i; k < i+3; ++k) {
