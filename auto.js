@@ -1,4 +1,5 @@
 ﻿document.addEventListener("autoEvent", function(event) {
+	text = "교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다.";
 	console.log('autoEvent listener!');
 	document.addEventListener('DOMSubtreeModified', function() {
 		console.log('DOMSubtreeModified listener!');
@@ -7,7 +8,7 @@
 
 			var strEl = document.getElementsByTagName('textarea')[0];
 			if(strEl.value.trim() == '') {
-				strEl.value = "교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. ";
+				strEl.value = text;
 				var script = "sapWD_Standard_inputFieldChange(document.getElementsByTagName('textarea')[0]); ";
 				location.href = "javascript: " + script + " void 0;";
 			}
@@ -15,7 +16,6 @@
 			var ts = document.getElementsByClassName('urCWhl');
 			var is_finish = true;
 			var idx;
-			var check_box_first = true;
 			for (var i = 0; i < ts.length;) {
 				var el = ts[i].getElementsByTagName('input')[0];
 				if(el.value == '30000019') {
@@ -28,21 +28,29 @@
 						}
 					}
 					i = j;
-				} else if(el.type == 'checkbox' && check_box_first) {
-					var j = i + Math.floor(Math.random() * 3);
-					for(var k = i; k < i+3; ++k) {
+				} else if(el.type == 'checkbox') {
+					var cnt = 0;
+					var k;
+					for(k = i; k < ts.length; ++k) {
 						var el = ts[k].getElementsByTagName('input')[0];
-						if(el.checked) {
-							j = k;
-							break;
-						}
+						if(el.type != 'checkbox') break;
+						if(el.checked) ++cnt;
 					}
-					i = j;
-					check_box_first = false;
+					if(cnt >= ((k-i)>5?5:(k-i))) {
+						i = k;
+					} else {
+						var el;
+						var j;
+						do {
+							j = i + Math.floor(Math.random() * (k-i));
+							el = ts[j].getElementsByTagName('input')[0];
+						} while (el.checked);
+						i = j;
+					}
 				} else {
 					var n = parseInt(el.value);
 					var j = i + Math.floor(Math.random() * (n>3?3:n));
-					if(n == NaN || n < 0 || n > 5) {
+					if(n == NaN || n < 0 || n > 7) {
 						j = i;
 						n = 0;
 					}
@@ -55,6 +63,7 @@
 					}
 					i = j;
 				}
+				if(i >= ts.length) break;
 				el = ts[i].getElementsByTagName('input')[0];
 				if(!el.checked) {
 					is_finish = false;
@@ -70,7 +79,7 @@
 				else if(el.value == '30000021') i += 3;
 				else if(el.value == '30000026') i += 2;
 				else if(el.value == '30000030') i += 1;
-				else if(el.type == 'checkbox') i += Math.floor(Math.random() * 3) + 1;
+				else if(el.type == 'checkbox') ;
 				else i++;
 			}
 			if(is_finish) {
