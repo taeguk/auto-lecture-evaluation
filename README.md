@@ -15,6 +15,11 @@ FAQ
 -------
 github의 [issue tab](https://github.com/taeguk/auto-lecture-evaluation/issues)을 이용해주세요.
 
+Contributors
+------
+[taeguk](https://github.com/taeguk) <br><br>
+[* Contribution을 하시기 전에 읽어주세요! *](https://github.com/taeguk/auto-lecture-evaluation/issues/1)
+
 Chrome Web Store Link
 -------
 https://chrome.google.com/webstore/detail/mkjjacinobamgnodoafbalpnoccehgfh
