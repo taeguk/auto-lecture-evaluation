@@ -8,8 +8,8 @@
     highest: '5'
   }, function(items) {
     text = items.tellstring;
-    lowestScore = items.lowest;
-    highestScore = items.highest;
+    lowestScore = 5 - parseInt(items.lowest);
+    highestScore = 5 - parseInt(items.highest);
   });
 
 	console.log('autoEvent listener!');
@@ -67,8 +67,8 @@
 						n = 0;
 					}
 					else {
-						var tmpMin = (n>lowestScore?lowestScore:n);
-						var tmpMax = (n>highestScore?highestScore:n);
+						var tmpMax = (n>lowestScore?lowestScore:n);
+						var tmpMin = (n>highestScore?highestScore:n);
 						j = i + tmpMin + Math.floor(Math.random() * (tmpMax-tmpMin+1));
 					}
 					for(var k = i; k < i+n; ++k) {
