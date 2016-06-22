@@ -3,7 +3,8 @@ function save_options() {
 	var tellstring = document.getElementById('tellstring').value;
 	var lowest = document.getElementById('lowest').value;
 	var highest = document.getElementById('highest').value;
-	if(lowest>highest) highest = [lowest, lowest = highest][0];
+	if(parseInt(lowest)>parseInt(highest)) highest = [lowest, lowest = highest][0];
+	if(tellstring.length<76) tellstring = tellstring.concat(new Array(Math.floor((76-tellstring.length)/14)+2).join('교수님 한학기 감사했습니다.'));
 
 	chrome.storage.sync.set({
 		tellstring: tellstring,
