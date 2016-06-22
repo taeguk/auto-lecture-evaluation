@@ -1,5 +1,17 @@
 ﻿document.addEventListener("autoEvent", function(event) {
-	text = "교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다.";
+  var text;
+  var lowestScore;
+  var highestScore;
+  chrome.storage.sync.get({
+    tellstring: '교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다.',
+    lowest: '1',
+    highest: '5'
+  }, function(items) {
+    text = items.tellstring;
+    lowestScore = 5 - parseInt(items.lowest);
+    highestScore = 5 - parseInt(items.highest);
+  });
+
 	console.log('autoEvent listener!');
 	document.addEventListener('DOMSubtreeModified', function() {
 		console.log('DOMSubtreeModified listener!');
@@ -49,10 +61,15 @@
 					}
 				} else {
 					var n = parseInt(el.value);
-					var j = i + Math.floor(Math.random() * (n>3?3:n));
+					var j = i;
 					if(n == NaN || n < 0 || n > 7) {
 						j = i;
 						n = 0;
+					}
+					else {
+						var tmpMax = (n>lowestScore?lowestScore:n);
+						var tmpMin = (n>highestScore?highestScore:n);
+						j = i + tmpMin + Math.floor(Math.random() * (tmpMax-tmpMin+1));
 					}
 					for(var k = i; k < i+n; ++k) {
 						var el = ts[k].getElementsByTagName('input')[0];
