@@ -17,7 +17,8 @@ github의 [issue tab](https://github.com/taeguk/auto-lecture-evaluation/issues)�
 
 Contributors
 ------
-[taeguk](https://github.com/taeguk) <br><br>
+[taeguk](http://taeguk.me)<br>
+[juice500ml](https://github.com/juice500ml)<br><br>
 [* Contribution을 하시기 전에 읽어주세요! *](https://github.com/taeguk/auto-lecture-evaluation/issues/1)
 
 Chrome Web Store Link
