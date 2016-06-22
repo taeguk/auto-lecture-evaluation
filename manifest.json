@@ -1,7 +1,7 @@
 ﻿{
   "manifest_version": 2,
   "name": "서강대학교 Saint 강의평가 auto",
-  "version": "0.13",
+  "version": "0.20",
   "description": "서강대학교 세인트 강의평가를 자동으로 해주는 확장 프로그램입니다.",
   "options_page": "options.html",
   "browser_action": {
