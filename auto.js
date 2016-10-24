@@ -4,7 +4,7 @@
   var highestScore;
   chrome.storage.sync.get({
     tellstring: '교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다. 교수님 한 학기동안 감사했습니다.',
-    lowest: '1',
+    lowest: '3',
     highest: '5'
   }, function(items) {
     text = items.tellstring;
